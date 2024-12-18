@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+:root {
+    --fonts: "Hind Siliguri", serif, "Titillium Web", serif;
+}
+
+body {
+    font-family: var(--fonts);
+    margin: 0%;
+}
+
+.nav {
+    height: 60px;
+    width: 100%;
+    background-color: #4680ff;
+    position: fixed;
+    top: 0;
+    color: #fff;
+    font-size: large;
+}
+
+.flex {
+    display: flex;
+}
+
+.anaround {
+    justify-content: space-around;
+}
+
+.btn {
+    border-radius: 4px;
+    font-family: var(--fonts);
+    background-color: #0000;
+    font-size: large;
+    border: none;
+    cursor: pointer;
+}
+.darkside{
+    height: 100vh;
+    width: 100%;
+    background-color: #00000017;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(5px);
+}
+.popup{
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #000;
+    height: auto;
+    width: 300px;
+    border-radius: 4px;
+}
+.beet{
+    justify-content: space-between;
+}
+.input{
+    height: 20px;
+    width: 200px;
+    border: 1px solid #505050;
+    outline: none;
+    padding: 8px;
+} 
+.input:focus{
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+n{
+    color: red;
+}
