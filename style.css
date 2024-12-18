@@ -97,3 +97,6 @@ table.minimalistBlack {
   table.minimalistBlack tfoot td {
     font-size: 14px;
   }
+  .grap{
+    flex-wrap: wrap;
+  }

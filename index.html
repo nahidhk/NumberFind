@@ -2,10 +2,7 @@
 <html lang="en">
 
 <head>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number find</title>
@@ -20,27 +17,75 @@
                         class="fa-solid fa-user-plus fa-shake"></i></b></button>
         </blockquote>
     </div>
-    <br><br><br>
+    <br><br><br><br>
+
+    <!-- filter DIV -->
+    <div class="flex anaround">
+        <div>
+            <div style="border: 1px dashed #000;padding: 10px;">
+                <center>
+                    <h1 style="margin: 0;">Filter And Search</h1>
+                    <hr>
+                </center>
+
+                <div class="flex grap">
+                    <div>
+                        <label for="">নাম লিখে ফিল্টার করুন</label><br>
+                        <input id="name" type="text" class="input" placeholder="নাম লিখে ফিল্টার করুন">
+                    </div>
+
+                    <div class="vcc" id="v1">
+                        <label for="">পিতার নাম লিখে ফিল্টার করুন </label><br>
+                        <input id="fname" type="text" class="input" placeholder="পিতার নাম লিখে ফিল্টার করুন">
+                    </div>
+
+                    <div class="vcc" id="v2">
+                        <label for="">গ্রাম লিখে ফিল্টার করুন </label><br>
+                        <input id="gram" type="text" class="input" placeholder="গ্রাম লিখে ফিল্টার করুন">
+                    </div>
+
+                    <div class="vcc" id="v2">
+                        <label for="">পারা লিখে ফিল্টার করুন </label><br>
+                        <input id="para" type="text" class="input" placeholder="পারা লিখে ফিল্টার করুন">
+                    </div>
+
+
+                    <div>
+                        <label for=""></label><br>
+                        <input id="search" type="text" class="input">
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <br>
     <section class="flex anaround">
         <div>
             <table class="minimalistBlack">
                 <thead>
-                <tr>
-                <th>নাম:</th>
-                <th>পিতার নাম:</th>
-                <th>পেশা:</th>
-                <th>গ্রাম:</th>
-                <th>মোবাইল নাম্বার:</th>
-                </tr>
+                    <tr>
+                        <th>নাম:</th>
+                        <th>পিতার নাম:</th>
+                        <th>পেশা:</th>
+                        <th>গ্রাম:</th>
+                        <th>মোবাইল নাম্বার:</th>
+                    </tr>
                 </thead>
                 <tbody id="app">
                     <tr>
-                        <td colspan="5"><center><i style="font-size: 30pt;" class="fa-solid fa-spinner fa-spin-pulse"></i></center></td>
+                        <td colspan="5">
+                            <center><i style="font-size: 30pt;" class="fa-solid fa-spinner fa-spin-pulse"></i></center>
+                        </td>
                     </tr>
-               
+
                 </tbody>
                 </tr>
-                </table>
+            </table>
         </div>
     </section>
 
@@ -60,33 +105,38 @@
                         <h3>সেভ করুন </h3>
                     </center>
 
-                    <form action="https://script.google.com/macros/s/AKfycby9gb9oCvUnN3AdWr9gD7QzqJURenE58XnMFUJmGpzJ8QwIVUjiLpUXVv_0xoMNSgqL/exec" 
-                    method="post">
-                
-                <label for="mobile_number">মোবাইল নাম্বার:</label>
-                <input class="input" type="number" name="mobile_number" placeholder="আপনার মোবাইল নাম্বার" required><br>
-              
-                <label for="name">নাম:</label>
-                <input class="input" type="text" name="name" placeholder="আপনার নাম লিখুন" required><br>
-              
-                <label for="father_name">পিতার নাম:</label>
-                <input class="input" type="text" name="father_name" placeholder="আপনার পিতার নাম লিখুন" required><br>
-              
-                <label for="profession">পেশা:</label>
-                <input class="input" type="text" name="profession" placeholder="পেশা (ঐচ্ছিক)"><br>
-              
-                <label for="village">গ্রাম:</label>
-                <input class="input" type="text" name="village" placeholder="আপনার গ্রাম" required><br>
-              
-                <label for="moholla">পারা/মহল্লা:</label>
-                <input class="input" type="text" name="moholla" placeholder="আপনার পাড়া/মহল্লা" required><br>
-              <br>
-               <div class="flex beet">
-                <button class="btn" type="submit" style="background-color: #4680ff; color: #fff;">Save</button>
-                <button class="btn" type="reset" style="background-color: #f83600; color: #fff;">Clear</button>
-               </div>
-              </form>
-              
+                    <form
+                        action="https://script.google.com/macros/s/AKfycby9gb9oCvUnN3AdWr9gD7QzqJURenE58XnMFUJmGpzJ8QwIVUjiLpUXVv_0xoMNSgqL/exec"
+                        method="post">
+
+                        <label for="mobile_number">মোবাইল নাম্বার:</label>
+                        <input class="input" type="number" name="mobile_number" placeholder="আপনার মোবাইল নাম্বার"
+                            required><br>
+
+                        <label for="name">নাম:</label>
+                        <input class="input" type="text" name="name" placeholder="আপনার নাম লিখুন" required><br>
+
+                        <label for="father_name">পিতার নাম:</label>
+                        <input class="input" type="text" name="father_name" placeholder="আপনার পিতার নাম লিখুন"
+                            required><br>
+
+                        <label for="profession">পেশা:</label>
+                        <input class="input" type="text" name="profession" placeholder="পেশা (ঐচ্ছিক)"><br>
+
+                        <label for="village">গ্রাম:</label>
+                        <input class="input" type="text" name="village" placeholder="আপনার গ্রাম" required><br>
+
+                        <label for="moholla">পারা/মহল্লা:</label>
+                        <input class="input" type="text" name="moholla" placeholder="আপনার পাড়া/মহল্লা" required><br>
+                        <br>
+                        <div class="flex beet">
+                            <button class="btn" type="submit"
+                                style="background-color: #4680ff; color: #fff;">Save</button>
+                            <button class="btn" type="reset"
+                                style="background-color: #f83600; color: #fff;">Clear</button>
+                        </div>
+                    </form>
+
                     <br>
                 </blockquote>
             </div>
