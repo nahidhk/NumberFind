@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="loadajson()">
     <div class="nav animate__bounceInDown animate__animated">
         <blockquote class="flex anaround">
             <span>Number Find </span>
@@ -20,42 +20,40 @@
     <br><br><br><br>
 
     <!-- filter DIV -->
-    <div class="flex anaround">
+     <blockquote>
+    <div class="flex anaround animate__fadeIn  animate__animated">
         <div>
             <div style="border: 1px dashed #000;padding: 10px;">
                 <center>
-                    <h1 style="margin: 0;">Filter And Search</h1>
+                    <h1 style="margin: 0;"><i class="fa-solid fa-filter fa-beat"></i>&nbsp;&nbsp;&nbsp; ফিল্টার এবং
+                        অনুসন্ধান</h1>
                     <hr>
                 </center>
 
                 <div class="flex grap">
                     <div>
-                        <label for="">নাম লিখে ফিল্টার করুন</label><br>
-                        <input id="name" type="text" class="input" placeholder="নাম লিখে ফিল্টার করুন">
+                        <label for=""> <i class="fa-solid fa-user"></i> নাম লিখে ফিল্টার করুন</label><br>
+                        <input list="namedata" oninput="searchData()" id="name" type="text" class="input"
+                            placeholder="নাম লিখে ফিল্টার করুন">
                     </div>
-
+                    <datalist id="namedata"> </datalist>
                     <div class="vcc" id="v1">
-                        <label for="">পিতার নাম লিখে ফিল্টার করুন </label><br>
-                        <input id="fname" type="text" class="input" placeholder="পিতার নাম লিখে ফিল্টার করুন">
+                        <label for=""> <i class="fa-solid fa-user-injured"></i> পিতার নাম লিখে ফিল্টার করুন </label><br>
+                        <input list="fnamedata" oninput="searchData()" id="fname" type="text" class="input"
+                            placeholder="পিতার নাম লিখে ফিল্টার করুন">
                     </div>
-
+                    <datalist id="fnamedata"></datalist>
                     <div class="vcc" id="v2">
-                        <label for="">গ্রাম লিখে ফিল্টার করুন </label><br>
-                        <input id="gram" type="text" class="input" placeholder="গ্রাম লিখে ফিল্টার করুন">
+                        <label for=""> <i class="fa-solid fa-city"></i> গ্রাম লিখে ফিল্টার করুন </label><br>
+                        <input list="garamdata" oninput="searchData()" id="gram" type="text" class="input"
+                            placeholder="গ্রাম লিখে ফিল্টার করুন">
                     </div>
-
-                    <div class="vcc" id="v2">
-                        <label for="">পারা লিখে ফিল্টার করুন </label><br>
-                        <input id="para" type="text" class="input" placeholder="পারা লিখে ফিল্টার করুন">
-                    </div>
-
-
+                    <datalist id="garamdata"></datalist>
                     <div>
-                        <label for=""></label><br>
-                        <input id="search" type="text" class="input">
+                        <label for=""><i class="fa-brands fa-searchengin"></i> সন্ধান করুন </label><br>
+                        <input oninput="searchData()" id="search" type="text" class="input"
+                            placeholder="পেশা , মোবাইল নাম্বার">
                     </div>
-
-
                 </div>
 
 
@@ -63,8 +61,8 @@
             </div>
         </div>
     </div>
-    <br>
-    <section class="flex anaround">
+</blockquote>
+    <section class="flex anaround flex anaround animate__fadeIn  animate__animated">
         <div>
             <table class="minimalistBlack">
                 <thead>
@@ -89,8 +87,6 @@
         </div>
     </section>
 
-
-
     <section id="csv" class="darkside flex anaround animate__fadeIn animate__animated vcc">
         <div>
             <br><br>
@@ -110,24 +106,27 @@
                         method="post">
 
                         <label for="mobile_number">মোবাইল নাম্বার:</label>
-                        <input class="input" type="number" name="mobile_number" placeholder="আপনার মোবাইল নাম্বার"
-                            required><br>
+                        <input oninput="ckpt()" id="mobile" value="01" class="input" type="number" name="mobile_number"
+                            placeholder="আপনার মোবাইল নাম্বার" required><br>
 
                         <label for="name">নাম:</label>
                         <input class="input" type="text" name="name" placeholder="আপনার নাম লিখুন" required><br>
 
                         <label for="father_name">পিতার নাম:</label>
-                        <input class="input" type="text" name="father_name" placeholder="আপনার পিতার নাম লিখুন"
-                            required><br>
+                        <input list="fnamedata" class="input" type="text" name="father_name"
+                            placeholder="আপনার পিতার নাম লিখুন" required><br>
 
                         <label for="profession">পেশা:</label>
-                        <input class="input" type="text" name="profession" placeholder="পেশা (ঐচ্ছিক)"><br>
-
+                        <input list="workdata" class="input" type="text" name="profession"
+                            placeholder="পেশা (ঐচ্ছিক)"><br>
+                        <datalist id="workdata"></datalist>
                         <label for="village">গ্রাম:</label>
-                        <input class="input" type="text" name="village" placeholder="আপনার গ্রাম" required><br>
-
+                        <input list="garamdata" class="input" type="text" name="village" placeholder="আপনার গ্রাম"
+                            required><br>
                         <label for="moholla">পারা/মহল্লা:</label>
-                        <input class="input" type="text" name="moholla" placeholder="আপনার পাড়া/মহল্লা" required><br>
+                        <input list="paradata" class="input" type="text" name="moholla" placeholder="আপনার পাড়া/মহল্লা"
+                            required><br>
+                        <datalist id="paradata"></datalist>
                         <br>
                         <div class="flex beet">
                             <button class="btn" type="submit"
@@ -145,6 +144,24 @@
 
 
 
+
+
+    <div class="foter animate__animated animate__fadeInUpBig">
+        <div class="flex anaround">
+            <div>
+                <div class="flex">
+                 <q style="margin: 5px;">ইসলামী ছাত্র শিবির</q>
+                 <div style="margin: 3px;">
+                    <img style="height: 24px;" src="/img/google-icon.svg" alt="">
+                    <img style="height: 24px;" src="/img/vercel-ar21.svg" alt="">
+                    <img style="height: 24px;" src="/img/github-tile.svg" alt="">
+                    <img style="height: 24px;" src="/img/javascript-icon.svg" alt="">
+                    <img style="height: 24px;" src="https://github.com/nahidhk.png" alt="">
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
         integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
