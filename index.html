@@ -20,48 +20,49 @@
     <br><br><br><br>
 
     <!-- filter DIV -->
-     <blockquote>
-    <div class="flex anaround animate__fadeIn  animate__animated">
-        <div>
-            <div style="border: 1px dashed #000;padding: 10px;">
-                <center>
-                    <h1 style="margin: 0;"><i class="fa-solid fa-filter fa-beat"></i>&nbsp;&nbsp;&nbsp; ফিল্টার এবং
-                        অনুসন্ধান</h1>
-                    <hr>
-                </center>
+    <blockquote>
+        <div class="flex anaround animate__fadeIn  animate__animated">
+            <div>
+                <div style="border: 1px dashed #000;padding: 10px;">
+                    <center>
+                        <h1 style="margin: 0;"><i class="fa-solid fa-filter fa-beat"></i>&nbsp;&nbsp;&nbsp; ফিল্টার এবং
+                            অনুসন্ধান</h1>
+                        <hr>
+                    </center>
 
-                <div class="flex grap">
-                    <div>
-                        <label for=""> <i class="fa-solid fa-user"></i> নাম লিখে ফিল্টার করুন</label><br>
-                        <input list="namedata" oninput="searchData()" id="name" type="text" class="input"
-                            placeholder="নাম লিখে ফিল্টার করুন">
+                    <div class="flex grap">
+                        <div>
+                            <label for=""> <i class="fa-solid fa-user"></i> নাম লিখে ফিল্টার করুন</label><br>
+                            <input list="namedata" oninput="searchData()" id="name" type="text" class="input"
+                                placeholder="নাম লিখে ফিল্টার করুন">
+                        </div>
+                        <datalist id="namedata"> </datalist>
+                        <div class="vcc" id="v1">
+                            <label for=""> <i class="fa-solid fa-user-injured"></i> পিতার নাম লিখে ফিল্টার করুন
+                            </label><br>
+                            <input list="fnamedata" oninput="searchData()" id="fname" type="text" class="input"
+                                placeholder="পিতার নাম লিখে ফিল্টার করুন">
+                        </div>
+                        <datalist id="fnamedata"></datalist>
+                        <div class="vcc" id="v2">
+                            <label for=""> <i class="fa-solid fa-city"></i> গ্রাম লিখে ফিল্টার করুন </label><br>
+                            <input list="garamdata" oninput="searchData()" id="gram" type="text" class="input"
+                                placeholder="গ্রাম লিখে ফিল্টার করুন">
+                        </div>
+                        <datalist id="garamdata"></datalist>
+                        <div>
+                            <label for=""><i class="fa-brands fa-searchengin"></i> সন্ধান করুন </label><br>
+                            <input oninput="searchData()" id="search" type="text" class="input"
+                                placeholder="পেশা , মোবাইল নাম্বার">
+                        </div>
                     </div>
-                    <datalist id="namedata"> </datalist>
-                    <div class="vcc" id="v1">
-                        <label for=""> <i class="fa-solid fa-user-injured"></i> পিতার নাম লিখে ফিল্টার করুন </label><br>
-                        <input list="fnamedata" oninput="searchData()" id="fname" type="text" class="input"
-                            placeholder="পিতার নাম লিখে ফিল্টার করুন">
-                    </div>
-                    <datalist id="fnamedata"></datalist>
-                    <div class="vcc" id="v2">
-                        <label for=""> <i class="fa-solid fa-city"></i> গ্রাম লিখে ফিল্টার করুন </label><br>
-                        <input list="garamdata" oninput="searchData()" id="gram" type="text" class="input"
-                            placeholder="গ্রাম লিখে ফিল্টার করুন">
-                    </div>
-                    <datalist id="garamdata"></datalist>
-                    <div>
-                        <label for=""><i class="fa-brands fa-searchengin"></i> সন্ধান করুন </label><br>
-                        <input oninput="searchData()" id="search" type="text" class="input"
-                            placeholder="পেশা , মোবাইল নাম্বার">
-                    </div>
+
+
+
                 </div>
-
-
-
             </div>
         </div>
-    </div>
-</blockquote>
+    </blockquote>
     <section class="flex anaround flex anaround animate__fadeIn  animate__animated">
         <div>
             <table class="minimalistBlack">
@@ -141,23 +142,20 @@
             </div>
         </div>
     </section>
-
-
-
-
-
+    <br><br><br>
     <div class="foter animate__animated animate__fadeInUpBig">
         <div class="flex anaround">
             <div>
                 <div class="flex">
-                 <q style="margin: 5px;">ইসলামী ছাত্র শিবির</q>
-                 <div style="margin: 3px;">
-                    <img style="height: 24px;" src="/img/google-icon.svg" alt="">
-                    <img style="height: 24px;" src="/img/vercel-ar21.svg" alt="">
-                    <img style="height: 24px;" src="/img/github-tile.svg" alt="">
-                    <img style="height: 24px;" src="/img/javascript-icon.svg" alt="">
-                    <img style="height: 24px;" src="https://github.com/nahidhk.png" alt="">
-                 </div>
+                    <q style="margin: 5px;">ইসলামী ছাত্র শিবির</q>
+                    <div style="margin: 3px;">
+                        <a href="https://docs.google.com/spreadsheets/d/1W1f31Hq3eSlHoGkZHIO6x3S56mmRf0JGv_LeY9fT3j0/edit?usp=sharing" target="_blank">
+                            <img style="height: 24px;" src="/img/google-icon.svg" alt="">
+                        </a>
+                        <img style="height: 24px;" src="/img/vercel-ar21.svg" alt="">
+                        <img style="height: 24px;" src="/img/github-tile.svg" alt="">
+                        <img style="height: 24px;" src="/img/javascript-icon.svg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
