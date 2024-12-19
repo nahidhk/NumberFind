@@ -2,14 +2,18 @@
 <html lang="en">
 
 <head>
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number find</title>
+    <title>Number Find</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body onload="loadajson()">
+    <section id="rooting"></section>
+
     <div class="nav animate__bounceInDown animate__animated">
         <blockquote class="flex anaround">
             <span>Number Find </span>
@@ -18,7 +22,6 @@
         </blockquote>
     </div>
     <br><br><br><br>
-
     <!-- filter DIV -->
     <blockquote>
         <div class="flex anaround animate__fadeIn  animate__animated">
@@ -29,7 +32,6 @@
                             অনুসন্ধান</h1>
                         <hr>
                     </center>
-
                     <div class="flex grap">
                         <div>
                             <label for=""> <i class="fa-solid fa-user"></i> নাম লিখে ফিল্টার করুন</label><br>
@@ -56,9 +58,6 @@
                                 placeholder="পেশা , মোবাইল নাম্বার">
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -149,7 +148,8 @@
                 <div class="flex">
                     <q style="margin: 5px;">ইসলামী ছাত্র শিবির</q>
                     <div style="margin: 3px;">
-                        <a href="https://docs.google.com/spreadsheets/d/1W1f31Hq3eSlHoGkZHIO6x3S56mmRf0JGv_LeY9fT3j0/edit?usp=sharing" target="_blank">
+                        <a href="https://docs.google.com/spreadsheets/d/1W1f31Hq3eSlHoGkZHIO6x3S56mmRf0JGv_LeY9fT3j0/edit?usp=sharing"
+                            target="_blank">
                             <img style="height: 24px;" src="/img/google-icon.svg" alt="">
                         </a>
                         <img style="height: 24px;" src="/img/vercel-ar21.svg" alt="">

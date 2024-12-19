@@ -42,6 +42,7 @@ body {
     position: fixed;
     top: 0;
     backdrop-filter: blur(5px);
+    z-index: 100;
 }
 .popup{
     background-color: #fff;
@@ -107,4 +108,9 @@ table.minimalistBlack {
     position: fixed;
     bottom: 0;
     color: #fff;
+  }
+  .ins{
+    background-color: #4680ff;
+    color: #fff;
+    width: 90%;
   }

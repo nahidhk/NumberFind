@@ -1,0 +1,15 @@
+{
+    "name": "Contacts  Number Find",
+    "short_name": "Contacts Number Find",
+    "icons": [
+      {
+        "src": "img/icon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#fff"
+  }

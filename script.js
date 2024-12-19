@@ -84,7 +84,7 @@ function yuoip() {
             });
             const uniqueVlg = new Set();
             data.forEach(item => {
-                uniqueVlg.add(item.vlg); 
+                uniqueVlg.add(item.vlg);
             });
             uniqueVlg.forEach(vlg => {
                 const option3 = document.createElement('option');
@@ -93,7 +93,7 @@ function yuoip() {
             });
             const uniqueVlg1 = new Set();
             data.forEach(item => {
-                uniqueVlg1.add(item.para); 
+                uniqueVlg1.add(item.para);
             });
             uniqueVlg1.forEach(para => {
                 const option4 = document.createElement('option');
@@ -103,7 +103,7 @@ function yuoip() {
 
             const uniqueVlg2 = new Set();
             data.forEach(item => {
-                uniqueVlg2.add(item.work); 
+                uniqueVlg2.add(item.work);
             });
             uniqueVlg2.forEach(work => {
                 const option3 = document.createElement('option');
@@ -140,3 +140,83 @@ function loadajson() {
 };
 
 
+
+
+function getCookie(name) {
+    let cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.indexOf(name + "=") == 0) {
+            return cookie.substring(name.length + 1);
+        }
+    }
+    return "";
+}
+function darkside() {
+    document.getElementById("darkside").style.display = "none";
+}
+let os = "web";
+let icon = '<i class="fa-solid fa-desktop"></i>';
+if (navigator.userAgent.indexOf("Android") !== -1) {
+    os = 'Android';
+    icon = '<i class="fa-brands fa-google-play"></i>';
+} else if (navigator.userAgent.indexOf("Windows") !== -1) {
+    os = 'Windows';
+    icon = '<i class="fa-brands fa-windows"></i>';
+} else if (navigator.userAgent.indexOf("Mac") !== -1) {
+    os = 'macOS';
+    icon = '<i class="fa-brands fa-apple"></i>';
+} else if (navigator.userAgent.indexOf("Linux") !== -1) {
+    os = 'Linux';
+    icon = '<i class="fa-brands fa-linux"></i>';
+} else if (navigator.userAgent.indexOf("iPhone") !== -1 || navigator.userAgent.indexOf("iPad") !== -1) {
+    os = 'iOS';
+    icon = '<i class="fa-brands fa-apple"></i>';
+}
+if (getCookie("install") == "true") {
+
+} else {
+    document.getElementById("rooting").innerHTML = `
+        <div id="darkside">
+        <div class="darkside flex anaround">  
+        <div>  
+        <br><br><br>
+            <div class='popup'>
+                <button onclick="darkside()" style='background-color:red;color:#fff;' class="btn"><i class="fa-solid fa-xmark"></i></button>
+                <center>
+                    <h3>Download PAW</h3>
+                    <hr>
+                   <span style="font-size:5rem;">${icon}</span> <br> <span style="font-size:15pt;">Install the app on your ${os} device to launch it easily. <span>
+                    <button class="btn ins" id="installBtn">Install ${os} App</button>
+                </center>
+                <br>
+                </div>
+            </div>
+            </div>
+        </div>`;
+}
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('installBtn').style.display = 'block';
+    document.getElementById('installBtn').addEventListener('click', () => {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                function setCookie(name, value, days) {
+                    let date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    let expires = "expires=" + date.toUTCString();
+                    document.cookie = name + "=" + value + "; " + expires + "; path=/";
+                }
+                setCookie('install', 'true', 365);
+                window.location.href = "/"
+            } else {
+                console.log('User dismissed the install prompt');
+                setCookie("install", flase);
+            }
+            deferredPrompt = null;
+        });
+    });
+});
