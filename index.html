@@ -27,11 +27,13 @@
         <div class="flex anaround animate__fadeIn  animate__animated">
             <div>
                 <div style="border: 1px dashed #000;padding: 10px;">
-                    <center>
+
+                    <div style="text-align: center;">
                         <h1 style="margin: 0;"><i class="fa-solid fa-filter fa-beat"></i>&nbsp;&nbsp;&nbsp; ফিল্টার এবং
                             অনুসন্ধান</h1>
-                        <hr>
-                    </center>
+                    </div>
+                    <hr>
+
                     <div class="flex grap">
                         <div>
                             <label for=""> <i class="fa-solid fa-user"></i> নাম লিখে ফিল্টার করুন</label><br>
@@ -101,12 +103,12 @@
                         <h3>সেভ করুন </h3>
                     </center>
 
-                    <form
+                    <form 
                         action="https://script.google.com/macros/s/AKfycby9gb9oCvUnN3AdWr9gD7QzqJURenE58XnMFUJmGpzJ8QwIVUjiLpUXVv_0xoMNSgqL/exec"
                         method="post">
-
+                        <i id="errors" style="color: red;"></i><i id="errors1"></i><br>
                         <label for="mobile_number">মোবাইল নাম্বার:</label>
-                        <input oninput="ckpt()" id="mobile" value="01" class="input" type="number" name="mobile_number"
+                        <input oninput="ckpt()" id="mobile" class="input" type="number" name="mobile_number"
                             placeholder="আপনার মোবাইল নাম্বার" required><br>
 
                         <label for="name">নাম:</label>
@@ -129,10 +131,10 @@
                         <datalist id="paradata"></datalist>
                         <br>
                         <div class="flex beet">
-                            <button class="btn" type="submit"
-                                style="background-color: #4680ff; color: #fff;">Save</button>
+                            <button id="subtn" class="btn" 
+                                style="background-color: #4680ff; color: #fff;"><i class="fa-regular fa-floppy-disk"></i> Save</button>
                             <button class="btn" type="reset"
-                                style="background-color: #f83600; color: #fff;">Clear</button>
+                                style="background-color: #f83600; color: #fff;"><i class="fa-solid fa-broom"></i> Clear</button>
                         </div>
                     </form>
 

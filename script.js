@@ -114,12 +114,26 @@ function yuoip() {
         })
         .catch(error => console.error('Error fetching data:', error));
 }
+console.log(apilink);
 
 yuoip();
 function ckpt() {
+    console.log(apilink);
+    const errors = document.getElementById('errors');
     const mobile = document.getElementById('mobile').value;
-    console.log(mobile);
-
+    const subtn = document.getElementById('subtn');
+    // Validate mobile number length
+    if (mobile.length !== 11 || !mobile.startsWith('01')) {
+        errors.innerHTML = "মোবাইল নাম্বার সঠিক নয় । 11 ডিজিট হতে হবে । '01XXXXXXXXX' এই ফরম্যাট অনুযায়ী দিন ।";
+        subtn.disabled = true;
+        subtn.style.backgroundColor = "gray";
+        return false;
+    } else {
+        subtn.disabled = false;
+        subtn.style.backgroundColor = "#007bff";
+        subtn.type = "submit";
+        errors.innerHTML = "";
+    }
 }
 function opencsv() {
     document.getElementById('csv').style.display = 'flex';
@@ -138,9 +152,6 @@ function loadajson() {
         })
         .catch(error => console.error('Error loading JSON data:', error));
 };
-
-
-
 
 function getCookie(name) {
     let cookies = document.cookie.split(';');
@@ -220,3 +231,4 @@ window.addEventListener('beforeinstallprompt', (e) => {
         });
     });
 });
+
