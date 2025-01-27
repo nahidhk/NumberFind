@@ -30,10 +30,11 @@ body {
 .btn {
     border-radius: 4px;
     font-family: var(--fonts);
-    background-color: #0000;
+    background-color: #4680ff;
     font-size: large;
     border: none;
     cursor: pointer;
+    color: #fff;
 }
 .darkside{
     height: 100vh;
