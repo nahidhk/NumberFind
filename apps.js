@@ -25,10 +25,11 @@ const url = new URL(window.location.href);
 const phone = url.searchParams.get('phone');
 if (phone) {
     displayData(phone);
+    document.getElementById("phone").value = phone;
 } else {
     const dataContainer = document.getElementById("showData");
     if (dataContainer) {
-        dataContainer.innerHTML = "<tr><td colspan='5'>Phone is not found.</td></tr>";
+        dataContainer.innerHTML = "<i class='red'>type The mobile number</i>";
     }
 }
 async function displayData(searchInput = "") {
@@ -45,7 +46,31 @@ async function displayData(searchInput = "") {
                 String(item.mobile).toLowerCase().includes(searchInput.toLowerCase())
         );
         if (filteredData.length === 0) {
-            dataContainer.innerHTML = "<tr><td colspan='5'>Phone is not found.</td></tr>";
+            dataContainer.innerHTML = `
+            
+               
+ <div  class="topbox">
+      <blockquote>
+        
+        <h3 class='fff'>This Number not found !</h3>
+        <p>Add this Number</p>
+        <button class='btn' onclick='addProfile'>Add Profile</button>
+      </blockquote>
+      <div class="topbox bgfff">
+        <blockquote>
+          <span class="apx"><i class="fa-solid fa-phone"></i></span>
+          <span class="apo"> <a href='tel:+880${phone}'>+880${phone}</a> <br> <span class="stikar">${getOperator(phone)}</span></span>
+          <br>
+          <span class="apx"><i class="fa-solid fa-location-dot"></i></span>
+          <span class="apo"> Bangladesh <br> <span class="stikar">Location</span></span>
+          <br>
+          <span class="apx"><i class="fa-brands fa-square-whatsapp"></i></span>
+          <span class="apo"> <a href='https://api.whatsapp.com/send?phone=880${phone}&text=Hello%20I%27m%20your%20number%20Find%20just%20Number%20Lookup%20!%20%0Ahttps%3A%2F%2Fnfind.vercel.app?phone=${phone}'> WhatsApp</a> <br> <span class="stikar"> WhatsApp</span></span>
+        </blockquote>
+      </div>
+    </div>
+            
+            `;
             return;
         }
         filteredData.forEach((item) => {
@@ -54,32 +79,29 @@ async function displayData(searchInput = "") {
     
  <div  class="topbox">
       <blockquote>
-        <img class="userimg" src="/img/icon.png" alt="">
-        <h3>${item.name}</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <img class="userimg" src="${item.imgurl}" alt="">
+        <h3 class='fff'>${item.name}</h3>
+        <p>${item.bio}</p>
       </blockquote>
       <div class="topbox bgfff">
         <blockquote>
           <span class="apx"><i class="fa-solid fa-phone"></i></span>
-          <span class="apo">+880${item.mobile} <br> <span class="stikar">${getOperator(item.mobile)}</span></span>
+          <span class="apo"> <a href='tel:+880${item.mobile}'>+880${item.mobile}</a> <br> <span class="stikar">${getOperator(item.mobile)}</span></span>
           <br>
           <span class="apx"><i class="fa-solid fa-location-dot"></i></span>
-          <span class="apo">Bangladesh <br> <span class="stikar">Loction</span></span>
+          <span class="apo"> Bangladesh <br> <span class="stikar">Location</span></span>
           <br>
           <span class="apx"><i class="fa-regular fa-envelope"></i></span>
-          <span class="apo">nahidappltd@gmail.com <br> <span class="stikar">E-mail</span></span>
+          <span class="apo"> <a href='mailto:${item.email}'>${item.email}</a> <br> <span class="stikar">E-mail</span></span>
           <br>
           <span class="apx"><i class="fa-brands fa-square-facebook"></i></span>
-          <span  class="apo" >nahid.td <br> <span class="stikar"> Facebook</span></span>
+          <span  class="apo" > <a href='${item.facebookurl}'>Facebook</a> <br> <span class="stikar"> Facebook</span></span>
           <br>
           <span class="apx"><i class="fa-brands fa-square-whatsapp"></i></span>
-          <span class="apo">nahid.td <br> <span class="stikar"> WhatsApp</span></span>
+          <span class="apo"> <a href='https://api.whatsapp.com/send?phone=${item.mobile}&text=Hello%20I%27m%20your%20number%20Find%20just%20Number%20Lookup%20!%20%0Ahttps%3A%2F%2Fnfind.vercel.app?phone=${item.mobile}'> WhatsApp</a> <br> <span class="stikar"> WhatsApp</span></span>
         </blockquote>
       </div>
     </div>
-
-
-  
             `;
             dataContainer.appendChild(itemElement);
         });
@@ -87,3 +109,7 @@ async function displayData(searchInput = "") {
         console.error("data error", error);
     }
 }
+
+
+
+

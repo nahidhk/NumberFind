@@ -13,6 +13,7 @@ body {
   height: 100vh;
   background-color: #fff;
   background-image: linear-gradient(900deg, #3a77fa, #fff);
+  background-repeat: no-repeat;
 }
 
 .nav {
@@ -154,7 +155,7 @@ select , button{
   background-color: transparent;
   margin: 2px;
 }
-.searchBox .fa-magnifying-glass{
+.searchBox .fa-magnifying-glass , .fa-arrow-right-long{
   cursor: pointer;
   margin: 2px;
 }
@@ -181,4 +182,11 @@ select , button{
   color: #000000;
   opacity: 0.5;
   padding-left: 10px;
+}
+a{
+  text-decoration: none;
+  color: #4680ff;
+}
+.red{
+  color: red;
 }
