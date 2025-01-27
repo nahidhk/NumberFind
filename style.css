@@ -110,20 +110,21 @@ n {
 
 .topbox {
   height: auto;
-  width: auto;
+  width: 300px;
   border: 1px solid #4680ff;
   border-radius: 10px;
-  padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-
 }
-
+.xx{
+  padding: 10px;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6
+ {
   margin: 0;
 }
 
@@ -140,7 +141,12 @@ h6 {
   padding: 15px;
   display: flex;
 }
-
+.searchBox input{
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
 .searchBox input,
 select , button{
   border: none;
@@ -151,4 +157,28 @@ select , button{
 .searchBox .fa-magnifying-glass{
   cursor: pointer;
   margin: 2px;
+}
+.userimg{
+  height: 100px;
+}
+.topbox p{
+  margin: 0;
+}
+.bgfff{
+  background-color: #fff;
+}
+.apx{
+  padding: 4px;
+  margin: 5px;
+  font-size: 20px;
+  width: 20px;
+  text-align: left;
+}
+.big{
+  font-size: 17px;
+}
+.stikar{
+  color: #000000;
+  opacity: 0.5;
+  padding-left: 10px;
 }
