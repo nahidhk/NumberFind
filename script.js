@@ -50,7 +50,7 @@ async function displayData(filters = {}) {
     }
 }
 
-displayData();
+
 function nodatepas() {
     const name = document.getElementById('name');
     const fname = document.getElementById('fname');
@@ -61,7 +61,7 @@ function nodatepas() {
         document.getElementById('v2').style.display = "block";
     });
 }
-nodatepas();
+
 
 function yuoip() {
     fetch(apilink)
@@ -231,4 +231,10 @@ window.addEventListener('beforeinstallprompt', (e) => {
         });
     });
 });
+
+
+
+
+
+
 

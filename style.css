@@ -142,9 +142,13 @@ h6 {
 }
 
 .searchBox input,
-select {
+select , button{
   border: none;
   outline: none;
   background-color: transparent;
+  margin: 2px;
+}
+.searchBox .fa-magnifying-glass{
+  cursor: pointer;
   margin: 2px;
 }

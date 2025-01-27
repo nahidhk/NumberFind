@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <meta name="description" content="Find your number in a long phone number list.">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#4680ff">
+  <meta name="keywords" content="number, find, search, number find, number search, number lookup, number search">
   <link rel="manifest" href="manifest.json">
   <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -13,7 +18,7 @@
     crossorigin="anonymous"></script>
 </head>
 
-<body onload="loadajson()" class="home">
+<body class="home">
   <section class="nav flex anaround">
     <p>
       <b>
@@ -38,18 +43,33 @@
        <div class="searchBox">
         <select class="fff" name="" id="">
           <option value="1">+91</option>
-          <option selected value="2">+88</option>
+          <option selected value="2">+880</option>
         </select>
-        <input class="fff" type="number" placeholder="0 180 000 0000" id="number">
+        <input name="phone" class="fff" type="number" placeholder="1800000000" id="phone">
+        <button type="submit">
         <i class="fa-solid fa-magnifying-glass fff"></i>
+      </button>
        </div>
       </form>
     </div>
   </section>
+  <div id="showData"></div>
+
+  
+
+<section class="flex center">
+  <div class="topbox">
+    
+  </div>
+</section>
+
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
     integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="script.js"></script>
+  <script src="apps.js"></script>
 </body>
 
 </html>
