@@ -113,3 +113,14 @@ async function displayData(searchInput = "") {
 
 
 
+  function only10(data10) {
+   const inputids = document.getElementById(data10.inputid);
+   const rids = document.getElementById(data10.rid);
+    if (inputids.value.length > 10) {
+     document.getElementById(data10.rid).style.border='1px solid red';
+      document.getElementById(data10.rid).style.boxShadow='0 0 10px 0 red'
+      rids.innerText='mamun'
+    }
+  }
+
+ 
