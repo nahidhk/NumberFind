@@ -119,8 +119,11 @@ async function displayData(searchInput = "") {
     if (inputids.value.length > 10) {
      document.getElementById(data10.rid).style.border='1px solid red';
       document.getElementById(data10.rid).style.boxShadow='0 0 10px 0 red'
-      rids.innerText='mamun'
+      rids.innerHTML=`<button onclick='reloadjs()' type='button' class='btn'>Reload</button>`
+      document.getElementById('err_log').innerHTML=`<i>This Mobile Number is Invalid , try again (171234567890) not type '0' in Fast Number! Reload and try again.</i>`
     }
   }
 
- 
+function reloadjs(){
+   window.location.reload();
+}
