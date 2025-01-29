@@ -132,11 +132,8 @@ function processNumber(inputData) {
   }
   if (phoneNumber.startsWith("0")) {
     phoneNumber = phoneNumber.substring(1);
-  }
-const myForm = document.getElementById(inputData.form);
-myForm.method="get";
-myForm.action ="?phone";
-myForm.submit();
+  } 
+  window.location.href=`?/phone=${phoneNumber}`
  alert("Your Mobile Number:+880"+phoneNumber)
 }
 
