@@ -22,7 +22,7 @@
   <section class="nav flex anaround">
     <p>
       <b>
-        Number lookup
+        NumLook
       </b>
     </p>
     <button class="btn"><i class="fa-regular fa-circle-user"></i></button>
@@ -39,48 +39,72 @@
   <section class="flex center">
     <div class="topbox xx">
       <h1 class="fff">Find and Search Number</h1>
-      <form action="" method="get">
-        <div class="searchBox">
-          <select class="fff" name="" id="">
-            <option value="1">+91</option>
-            <option selected value="2">+880</option>
-          </select>
-          <input name="phone" class="fff" type="number" placeholder="1800000000" id="phone">
-          <button type="submit">
-            <i class="fa-solid fa-magnifying-glass fff"></i>
-          </button>
-        </div>
-      </form>
+
+      <div class="searchBox">
+        <select class="fff" name="" id="">
+          <option value="1">+91</option>
+          <option selected value="2">+88</option>
+        </select>
+        <input oninput="validInput(event)" name="phone" class="fff" type="number" placeholder="1800000000" id="phone">
+        <button type="submit" onclick="processNumber({inputid:'phone'})">
+          <i class="fa-solid fa-magnifying-glass fff"></i>
+        </button>
+      </div>
+
     </div>
   </section>
-<br>
+  <br>
   <section id="showData" class="flex center"> </section>
 
-<section class="darkside">
-  <br><br><br><br>
-  <div class="flex center">
-    <div class="popup">
-      <br><br>
-      <blockquote>
-        <h1>Join your Number</h1>
-      <form id="myform">
-        <div class="searchBox" id="rid1">
-          <select  name="" id="">
-            <option value="1">+91</option>
-            <option selected value="2">+88</option>
-          </select>
-          <input id="phones" oninput="validInput(event)" type="number" placeholder="01800000000">
-  <button onclick="processNumber({form:'myform',inputid:'phones'})" type="button">
-            <i class="fa-solid fa-arrow-right-long"></i>
-          </button>
-        </div>
-                <br><br>
-      </form>
-      </blockquote>
-    </div>
-  </div>
+  <section class="darkside vcc" id="myjoin">
+    <br><br><br><br>
+    <div class="flex center">
+      <div class="popup">
+        <br><br>
+        <blockquote>
+          <h1>Join your Number</h1>
 
-</section>
+
+
+          <form action="" method="post">
+
+            <!-- Step 1 -->
+            <div class="searchBox" id="s1">
+              <select name="" id="">
+                <option value="1">+91</option>
+                <option selected value="2">+88</option>
+              </select>
+
+              <input readonly id="phones" type="number" placeholder="01800000000" required>
+              <button type="button" onclick="document.getElementById('s1').style.display='none';document.getElementById('s2').style.display = 'block'">
+                <i class="fa-solid fa-arrow-right-long"></i>
+              </button>
+            </div>
+
+            <!-- step to  -->
+
+            <div id="s2">
+              
+<img height="100px" src="/img/man-avatar.png" alt="" srcset="">
+<br>
+              <label for="">Image Url*</label><br>
+              <input class="input" type="url" required>
+
+
+            </div>
+
+
+
+
+          </form>
+
+          <br><br>
+
+        </blockquote>
+      </div>
+    </div>
+
+  </section>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
