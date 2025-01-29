@@ -56,25 +56,24 @@
 <br>
   <section id="showData" class="flex center"> </section>
 
-<section class="darkside ">
+<section class="darkside">
   <br><br><br><br>
   <div class="flex center">
     <div class="popup">
       <br><br>
       <blockquote>
         <h1>Join your Number</h1>
-      <form action="" method="get">
+      <form id="myform">
         <div class="searchBox" id="rid1">
           <select  name="" id="">
             <option value="1">+91</option>
-            <option selected value="2">+880</option>
+            <option selected value="2">+88</option>
           </select>
-          <input oninput="only10({inputid:'phone1', rid:'rid1'})" class="phone" name="phone"  type="number" placeholder="1800000000" id="phone1">
-          <button type="submit">
-            <i class="fa-solid fa-arrow-right-long"></i>
+          <input id="phones" oninput="validInput(event)" type="number" placeholder="01800000000">
+  <button onclick="processNumber({form:'myform',inputid:'phones'})" type="button">
+            <i class="fa-solid fa-arrow-right-long"></i>>
           </button>
         </div>
-        <p class="red" id="err_log"></p>
                 <br><br>
       </form>
       </blockquote>

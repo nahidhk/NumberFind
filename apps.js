@@ -1,52 +1,52 @@
 const apilink = 'https://script.googleusercontent.com/macros/echo?user_content_key=_kEIJ1IsY0iDiysrKFfzBEuFcPGTt4aRgAIBLUa9bbxHuf86OFXYUfBaSd_K_D0DybuSDRg0jrQmHaOoz9UxGuB20-m8m6fGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnIdHSUQlSKoTFyyhnzMwWUCS0XU7aCAzxVLdTxfpyZY3b0Q0clrKdp4qCeQbXNja6ETfKZQeAUZCk-wE2qT8p7K7HWFWGZw78A&lib=MOBgxagtPplI3E9XNB2hjtASW3VxzywJF';
 
 function getOperator(phoneNumber) {
-    if (typeof phoneNumber !== "string") {
-        phoneNumber = phoneNumber.toString(); 
-    }
-    const operators = {
-        '17': 'Grameenphone - Telenor Group',
-        '13': 'Grameenphone - Telenor Group',
-        '18': 'Robi Axiata Limited',
-        '16': 'Airtel - Robi Axiata Limited',
-        '15': 'Teletalk - Bangladesh Limited',
-        '19': 'Banglalink - Digital Communications Limited',
-        '14': 'Banglalink - Digital Communications Limited',
-    };
-    const prefix = phoneNumber.substring(0, 2);
-    if (operators[prefix]) {
-        return operators[prefix]; 
-    } else {
-        return 'Unknown Operator'; 
-    }
+  if (typeof phoneNumber !== "string") {
+    phoneNumber = phoneNumber.toString();
+  }
+  const operators = {
+    '17': 'Grameenphone - Telenor Group',
+    '13': 'Grameenphone - Telenor Group',
+    '18': 'Robi Axiata Limited',
+    '16': 'Airtel - Robi Axiata Limited',
+    '15': 'Teletalk - Bangladesh Limited',
+    '19': 'Banglalink - Digital Communications Limited',
+    '14': 'Banglalink - Digital Communications Limited',
+  };
+  const prefix = phoneNumber.substring(0, 2);
+  if (operators[prefix]) {
+    return operators[prefix];
+  } else {
+    return 'Unknown Operator';
+  }
 }
 
 const url = new URL(window.location.href);
 const phone = url.searchParams.get('phone');
 if (phone) {
-    displayData(phone);
-    document.getElementById("phone").value = phone;
+  displayData(phone);
+  document.getElementById("phone").value = phone;
 } else {
-    const dataContainer = document.getElementById("showData");
-    if (dataContainer) {
-        dataContainer.innerHTML = "<i class='red'>type The mobile number</i>";
-    }
+  const dataContainer = document.getElementById("showData");
+  if (dataContainer) {
+    dataContainer.innerHTML = "<i class='red'>type The mobile number</i>";
+  }
 }
 async function displayData(searchInput = "") {
-    try {
-        const response = await fetch(apilink);
-        const data = await response.json();
-        const dataContainer = document.getElementById("showData");
-        if (!dataContainer) {
-            throw new Error("Element with id 'showData' not found.");
-        }
-        dataContainer.innerHTML = "";
-        const filteredData = data.filter(
-            (item) =>
-                String(item.mobile).toLowerCase().includes(searchInput.toLowerCase())
-        );
-        if (filteredData.length === 0) {
-            dataContainer.innerHTML = `
+  try {
+    const response = await fetch(apilink);
+    const data = await response.json();
+    const dataContainer = document.getElementById("showData");
+    if (!dataContainer) {
+      throw new Error("Element with id 'showData' not found.");
+    }
+    dataContainer.innerHTML = "";
+    const filteredData = data.filter(
+      (item) =>
+      String(item.mobile).toLowerCase().includes(searchInput.toLowerCase())
+    );
+    if (filteredData.length === 0) {
+      dataContainer.innerHTML = `
             
                
  <div  class="topbox">
@@ -71,11 +71,11 @@ async function displayData(searchInput = "") {
     </div>
             
             `;
-            return;
-        }
-        filteredData.forEach((item) => {
-            const itemElement = document.createElement("tr");
-            itemElement.innerHTML = `
+      return;
+    }
+    filteredData.forEach((item) => {
+      const itemElement = document.createElement("tr");
+      itemElement.innerHTML = `
     
  <div  class="topbox">
       <blockquote>
@@ -103,27 +103,40 @@ async function displayData(searchInput = "") {
       </div>
     </div>
             `;
-            dataContainer.appendChild(itemElement);
-        });
-    } catch (error) {
-        console.error("data error", error);
-    }
-}
-
-
-
-
-  function only10(data10) {
-   const inputids = document.getElementById(data10.inputid);
-   const rids = document.getElementById(data10.rid);
-    if (inputids.value.length > 10) {
-     document.getElementById(data10.rid).style.border='1px solid red';
-      document.getElementById(data10.rid).style.boxShadow='0 0 10px 0 red'
-      rids.innerHTML=`<button onclick='reloadjs()' type='button' class='btn'>Reload</button>`
-      document.getElementById('err_log').innerHTML=`<i>This Mobile Number is Invalid , try again (171234567890) not type '0' in Fast Number! Reload and try again.</i>`
-    }
+      dataContainer.appendChild(itemElement);
+    });
+  } catch (error) {
+    console.error("data error", error);
   }
-
-function reloadjs(){
-   window.location.reload();
 }
+
+
+
+function validInput(event) {
+  let inputField = event.target;
+  let value = inputField.value;
+  if (value.length > 0 && value.charAt(0) !== '0') {
+    inputField.value = "";
+    alert("Phone number must start with 0!");
+  }
+  inputField.value = value.replace(/[^0-9]/g, '');
+}
+
+
+
+function processNumber(inputData) {
+  let phoneNumber = document.getElementById(inputData.inputid).value;
+  if (phoneNumber.length === 0) {
+    alert("Please enter a phone number starting with 0.");
+    return;
+  }
+  if (phoneNumber.startsWith("0")) {
+    phoneNumber = phoneNumber.substring(1);
+  }
+const myForm = document.getElementById(inputData.form);
+myForm.method="get";
+myForm.action ="?phone";
+myForm.submit();
+ alert("Your Mobile Number:+880"+phoneNumber)
+}
+
