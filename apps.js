@@ -191,5 +191,16 @@ function joining(){
     document.getElementById("myjoin").style.display = "block";
     document.getElementById('phones').value = "0"+phone;
 }
+ 
+ 
+ function shows() {
+  const showmy = document.getElementById('showImg'); // ছবির <img> এলিমেন্ট  
+  const inputImg = document.getElementById('inputImg').value; // ইনপুট ফিল্ড থেকে URL নেওয়া  
 
+  if (showmy && inputImg) { 
+    showmy.src = inputImg; // সরাসরি src সেট করুন
+  } else {
+    console.error("Element not found or input is empty");
+  }
+}
 
