@@ -76,21 +76,22 @@
               </select>
 
               <input readonly id="phones" type="number" placeholder="01800000000" required>
-              <button type="button" onclick="document.getElementById('s1').style.display='none';document.getElementById('s2').style.display = 'block'">
+              <button type="button"
+                onclick="document.getElementById('s1').style.display='none';document.getElementById('s2').style.display = 'block',shows()">
                 <i class="fa-solid fa-arrow-right-long"></i>
               </button>
             </div>
 
             <!-- step to  -->
 
-            <div id="s2">
-              
-<img height="100px" id="showImg">
-<br>
+            <div id="s2" class="vcc">
+
+              <img height="100px" id="showImg">
+              <br>
+              <label for="">Input your Name *</label>
+              <input type="text" class="input" required placeholder="Input your name">
               <label for="">Image Url*</label><br>
-              <input oninput="shows()" id="inputImg" class="input" type="url" required>
-
-
+              <input oninput="shows()" id="inputImg" class="input" type="url" required value="https://nfind.vercel.app/img/man-avatar.png">
             </div>
 
 

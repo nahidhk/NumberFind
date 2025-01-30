@@ -194,11 +194,11 @@ function joining(){
  
  
  function shows() {
-  const showmy = document.getElementById('showImg'); // ছবির <img> এলিমেন্ট  
-  const inputImg = document.getElementById('inputImg').value; // ইনপুট ফিল্ড থেকে URL নেওয়া  
+  const showmy = document.getElementById('showImg'); 
+  const inputImg = document.getElementById('inputImg').value; 
 
   if (showmy && inputImg) { 
-    showmy.src = inputImg; // সরাসরি src সেট করুন
+    showmy.src = inputImg; 
   } else {
     console.error("Element not found or input is empty");
   }
