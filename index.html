@@ -25,7 +25,13 @@
         NumLook
       </b>
     </p>
-    <button class="btn"><i class="fa-regular fa-circle-user"></i></button>
+
+    <button class="btn">
+      <i onclick="window.location.href='https://docs.google.com/spreadsheets/d/1W1f31Hq3eSlHoGkZHIO6x3S56mmRf0JGv_LeY9fT3j0/edit?usp=sharing'" title="Comment Your Poblems" class="fa-regular fa-comment-dots"></i> &nbsp;
+      <i onclick="window.location.href='https://github.com/nahidhk/NumberFind/'" title="Open Source" class="fa-brands fa-github"></i>
+    </button>
+
+
   </section>
   <br><br><br><br>
   <div class="flex anaround">
@@ -54,7 +60,9 @@
     </div>
   </section>
   <br>
-  <section id="showData" class="flex center"> </section>
+  <section id="showData" class="flex center wrap">
+    <h1 style="font-size: 60px; color: #fff;"><i class="fa-solid fa-spinner fa-spin-pulse"></i></h1>
+  </section>
 
   <section class="darkside vcc" id="myjoin">
     <br><br><br><br>
@@ -66,7 +74,9 @@
 
 
 
-          <form action="https://script.google.com/macros/s/AKfycbyIhGL3pjSewLk-hYcdyIOzxBNy7Xrpxpax7pXSOhh7gRQfYoJRsZDcFCTMfVwtnLGG/exec" method="post">
+          <form
+            action="https://script.google.com/macros/s/AKfycbyIhGL3pjSewLk-hYcdyIOzxBNy7Xrpxpax7pXSOhh7gRQfYoJRsZDcFCTMfVwtnLGG/exec"
+            method="post">
 
             <!-- Step 1 -->
             <div class="searchBox" id="s1">
@@ -102,9 +112,8 @@
             <div id="s3" class="vcc">
               <label for="email">Email</label>
               <div class="flex">
-                <i class="fa-solid fa-envelope lgicon"></i> 
-                <input class="input" type="email" name="email" id="email"
-                  placeholder="username@gmail.com" />
+                <i class="fa-solid fa-envelope lgicon"></i>
+                <input class="input" type="email" name="email" id="email" placeholder="username@gmail.com" />
               </div>
               <label for="">Facebook Url</label>
               <div class="flex">
@@ -126,6 +135,14 @@
 
   </section>
 
+
+
+  <section class="foter">
+    <div class="flex anaround">
+      <h3> <br> This is number lockup</h3>
+      <p> <br> This is a openscore</p>
+    </div>
+  </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
     integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="

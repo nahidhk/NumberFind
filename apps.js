@@ -92,11 +92,12 @@ async function displayData(searchInput = "") {
             const itemElement = document.createElement("tr");
             itemElement.innerHTML = `
     
- <div  class="topbox">
+ <div  class="topbox" style="margin:4px;">
       <blockquote>
         <img class="userimg" src="${item.imgurl}" alt="">
-        <h3 class='fff'>${item.name}</h3>
+        <h3 >${item.name}</h3>
         <p>${item.bio}</p>
+        <p class='uid'>UID:(<b>${item.uid}</b>)</p>
       </blockquote>
       <div class="topbox bgfff">
         <blockquote>
