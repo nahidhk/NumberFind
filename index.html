@@ -66,7 +66,7 @@
 
 
 
-          <form action="" method="post">
+          <form action="https://script.google.com/macros/s/AKfycbyIhGL3pjSewLk-hYcdyIOzxBNy7Xrpxpax7pXSOhh7gRQfYoJRsZDcFCTMfVwtnLGG/exec" method="post">
 
             <!-- Step 1 -->
             <div class="searchBox" id="s1">
@@ -75,7 +75,7 @@
                 <option selected value="2">+88</option>
               </select>
 
-              <input readonly id="phones" type="number" placeholder="01800000000" required>
+              <input readonly id="phones" type="number" name="mobile" placeholder="01800000000" required>
               <button type="button"
                 onclick="document.getElementById('s1').style.display='none';document.getElementById('s2').style.display = 'block',shows()">
                 <i class="fa-solid fa-arrow-right-long"></i>
@@ -89,23 +89,30 @@
               <img height="100px" id="showImg">
               <br>
               <label for="">Input your Name *</label>
-              <input type="text" class="input" required placeholder="Input your name">
+              <input type="text" name="name" class="input" required placeholder="Input your name">
               <label for="">Image Url*</label><br>
-              <input oninput="shows()" id="inputImg" class="input" type="url" required value="https://nfind.vercel.app/img/man-avatar.png">
+              <input name="imgurl" oninput="shows()" id="inputImg" class="input" type="url" required
+                value="https://nfind.vercel.app/img/man-avatar.png">
               <label for="">Bio*</label>
-             <input class="input" type="text" name="" id="" value="" placeholder="Input the Bio"/>
-             <button type="button" class="btn">Next &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
+              <input class="input" type="text" name="bio" id="" value="" placeholder="Input the Bio" />
+              <button
+                onclick="document.getElementById('s2').style.display='none';document.getElementById('s3').style.display='block';"
+                type="button" class="btn">Next &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
             </div>
-<div id="s3">
-  <label for="email">Email</label>
-  <div class="flex">
-    <i class="fa-solid fa-envelope lgicon"></i>  <input class="input" type="email" name="email" id="email" placeholder="username@gmail.com" />
-  </div>
-  <label for="">Facebook Url</label>
-    <div class="flex">
-    <i class="fa-solid fa-envelope lgicon"></i>  <input class="input" type="email" name="email" id="email" placeholder="username@gmail.com" />
-  </div>
-</div>
+            <div id="s3" class="vcc">
+              <label for="email">Email</label>
+              <div class="flex">
+                <i class="fa-solid fa-envelope lgicon"></i> 
+                <input class="input" type="email" name="email" id="email"
+                  placeholder="username@gmail.com" />
+              </div>
+              <label for="">Facebook Url</label>
+              <div class="flex">
+                <i class="fa-brands fa-square-facebook lgicon"></i>
+                <input class="input" type="url" name="facebookurl" id="" placeholder="username@gmail.com" />
+              </div>
+              <button type="submit" class="btn">Save This Info</button>
+            </div>
 
 
 
