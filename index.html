@@ -27,8 +27,11 @@
     </p>
 
     <button class="btn">
-      <i onclick="window.location.href='https://docs.google.com/spreadsheets/d/1W1f31Hq3eSlHoGkZHIO6x3S56mmRf0JGv_LeY9fT3j0/edit?usp=sharing'" title="Comment Your Poblems" class="fa-regular fa-comment-dots"></i> &nbsp;
-      <i onclick="window.location.href='https://github.com/nahidhk/NumberFind/'" title="Open Source" class="fa-brands fa-github"></i>
+      <i onclick="window.location.href='https://docs.google.com/spreadsheets/d/1W1f31Hq3eSlHoGkZHIO6x3S56mmRf0JGv_LeY9fT3j0/edit?usp=sharing'"
+        title="Comment Your Poblems" class="fa-regular fa-comment-dots"></i> &nbsp;
+      <i onclick="window.location.href='https://github.com/nahidhk/NumberFind/'" title="Open Source"
+        class="fa-brands fa-github"></i> &nbsp;
+      <i title="Download PWA" id="nanBtn" class="fa-solid fa-download" onclick=" location.reload()"></i>
     </button>
 
 
@@ -74,9 +77,7 @@
 
 
 
-          <form
-            action="https://script.google.com/macros/s/AKfycbyIhGL3pjSewLk-hYcdyIOzxBNy7Xrpxpax7pXSOhh7gRQfYoJRsZDcFCTMfVwtnLGG/exec"
-            method="post">
+          <form id="fromx">
 
             <!-- Step 1 -->
             <div class="searchBox" id="s1">
@@ -99,28 +100,40 @@
               <img height="100px" id="showImg">
               <br>
               <label for="">Input your Name *</label>
-              <input type="text" name="name" class="input" required placeholder="Input your name">
+              <input id="myname" type="text" name="name" class="input" required placeholder="Input your name">
+
               <label for="">Image Url*</label><br>
               <input name="imgurl" oninput="shows()" id="inputImg" class="input" type="url" required
                 value="https://nfind.vercel.app/img/man-avatar.png">
+
               <label for="">Bio*</label>
-              <input class="input" type="text" name="bio" id="" value="" placeholder="Input the Bio" />
-              <button
-                onclick="document.getElementById('s2').style.display='none';document.getElementById('s3').style.display='block';"
-                type="button" class="btn">Next &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
+              <input class="input" type="text" name="bio" id="mybio" placeholder="Input the Bio" required>
+              <br><br>
+              <div class="textcenter">
+                <button
+                  onclick="document.getElementById('s2').style.display='none';document.getElementById('s3').style.display='block';"
+                  type="button" class="btn">Next &nbsp; <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+
             </div>
+
+            <!-- setp three -->
+
             <div id="s3" class="vcc">
-              <label for="email">Email</label>
+              <label for="email">Email*</label>
               <div class="flex">
                 <i class="fa-solid fa-envelope lgicon"></i>
-                <input class="input" type="email" name="email" id="email" placeholder="username@gmail.com" />
+                <input class="input" type="email" name="email" id="email" placeholder="username@gmail.com" required />
               </div>
               <label for="">Facebook Url</label>
               <div class="flex">
                 <i class="fa-brands fa-square-facebook lgicon"></i>
-                <input class="input" type="url" name="facebookurl" id="" placeholder="username@gmail.com" />
+                <input class="input" type="url" name="facebookurl" id="fburl" placeholder="username@gmail.com" />
               </div>
-              <button type="submit" class="btn">Save This Info</button>
+              <br>
+              <div class="textcenter">
+                <button onclick="saveinfo()" type="button" class="btn">Save This Info</button>
+              </div>
             </div>
 
 
@@ -135,11 +148,11 @@
 
   </section>
 
-<div id="rooting">
-  
-</div>
+  <div id="rooting">
 
-  
+  </div>
+
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
     integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="

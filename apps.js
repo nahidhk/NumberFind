@@ -8,13 +8,13 @@ if (myfun) {
     window[myfun]();
 }
 
-function test(){
+function test() {
     alert('Hello');
 }
 
 if (phone) {
     displayData(phone);
-    document.getElementById("phone").value = "0"+phone;
+    document.getElementById("phone").value = "0" + phone;
 } else {
     const dataContainer = document.getElementById("showData");
     if (dataContainer) {
@@ -150,11 +150,11 @@ function processNumber(inputData) {
         phoneNumber = phoneNumber.substring(1);
     }
     window.location.href = `?phone=${phoneNumber}`
-  
+
 }
 
 function addProfile() {
-window.location.href = window.location.href + "&f=joining";
+    window.location.href = window.location.href + "&f=joining";
 }
 
 function copyText(event) {
@@ -188,21 +188,21 @@ function openFacebook(event) {
     window.open(url, "_blank");
 }
 
-function joining(){
+function joining() {
     document.getElementById("myjoin").style.display = "block";
-    document.getElementById('phones').value = "0"+phone;
+    document.getElementById('phones').value = "0" + phone;
 }
- 
- 
- function shows() {
-  const showmy = document.getElementById('showImg'); 
-  const inputImg = document.getElementById('inputImg').value; 
 
-  if (showmy && inputImg) { 
-    showmy.src = inputImg; 
-  } else {
-    console.error("Element not found or input is empty");
-  }
+
+function shows() {
+    const showmy = document.getElementById('showImg');
+    const inputImg = document.getElementById('inputImg').value;
+
+    if (showmy && inputImg) {
+        showmy.src = inputImg;
+    } else {
+        console.error("Element not found or input is empty");
+    }
 }
 
 
@@ -225,6 +225,7 @@ function getCookie(name) {
 function darkside() {
     document.getElementById("darkside").style.display = "none";
 }
+
 let os = "web";
 let icon = '<i class="fa-solid fa-desktop"></i>';
 if (navigator.userAgent.indexOf("Android") !== -1) {
@@ -244,8 +245,9 @@ if (navigator.userAgent.indexOf("Android") !== -1) {
     icon = '<i class="fa-brands fa-apple"></i>';
 }
 if (getCookie("install") == "true") {
-
+    document.getElementById('nanBtn').classList="vcc";
 } else {
+   
     document.getElementById("rooting").innerHTML = `
         <div id="darkside">
         <div class="darkside flex anaround">  
@@ -265,6 +267,7 @@ if (getCookie("install") == "true") {
             </div>
         </div>`;
 }
+
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
@@ -291,9 +294,29 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
 });
 
+ function saveinfo(){
+    const myform = document.getElementById('fromx');
+    const myname = document.getElementById('myname').value;
+    const imgurl = document.getElementById('inputImg').value;
+    const mybio = document.getElementById('mybio').value;
+    const email = document.getElementById('email').value;
+    const fburl = document.getElementById('fburl').value;
+    if (myname && imgurl && mybio && email && fburl) {
+        myform.action="https://script.google.com/macros/s/AKfycbyIhGL3pjSewLk-hYcdyIOzxBNy7Xrpxpax7pXSOhh7gRQfYoJRsZDcFCTMfVwtnLGG/exec";
+        myform.method="post";
+        myform.submit();
+        setTimeout(reloadio, 500)
+    } else {
+      const mycon =  confirm('You Not Input Data! Reload and try agin');
+      if(mycon === true){
+        location.reload()
+      }
+    }
+ }
 
-
-
+function reloadio(){
+    window.location.href=`/?phone=${phone}`;
+}
 
 
 
