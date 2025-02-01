@@ -25,6 +25,7 @@ body {
   top: 0;
   color: #fff;
   font-size: large;
+  z-index: 100;
 }
 
 .flex {
@@ -95,19 +96,12 @@ n {
   flex-wrap: wrap;
 }
 
-.foter {
-  height: 30px;
-  width: 100%;
-  background-color: #fcce79;
-  position: fixed;
-  bottom: 0;
-  color: #fff;
-}
 
 .ins {
   background-color: #4680ff;
   color: #fff;
   width: 90%;
+  
 }
 
 .topbox {
@@ -202,7 +196,8 @@ a{
   opacity: 0.6;
 }
 .foter{
-  height: 300px;
+  height: 100px;
   width: 100%;
   background-color: #4680ff;
+  bottom: 0;
 }
