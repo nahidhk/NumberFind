@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apis.google.com https://accounts.google.com 'unsafe-inline' 'unsafe-eval';">
 <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apis.google.com https://accounts.google.com https://nfind.vercel.app 'unsafe-inline' 'unsafe-eval';">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apis.google.com https://accounts.google.com https://nfind.vercel.app 'unsafe-inline' 'unsafe-eval';">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 </head>
 <body>
     <button onclick="authenticate()">Click to Upload Your Contacts</button>
+<iframe src="https://accounts.google.com/o/oauth2/auth" sandbox="allow-scripts allow-same-origin"></iframe>
 
     <script>
         const CLIENT_ID = "431607976995-rj1bhjdc8ohhbmlfa79p6nsj463phb9t.apps.googleusercontent.com";  // Replace with your Client ID
